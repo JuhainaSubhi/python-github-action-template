@@ -1,25 +1,23 @@
-# Make sure to change the action name here (must be unique).
-# Update the rest as needed.
-name: 'simple-addition-action'
-description: 'add two numbers and return results.'
-branding: # Look at documentation for branding options/requirements. These are my favorites.
-  icon: 'plus'
-  color: 'green'
+name: 'string-concatenation-action'
+description: 'Concatenates two input strings.'
+branding:
+  icon: 'merge'
+  color: 'purple'
 inputs:
-  input-one:
-    description: 'First number to add'
+  input1:
+    description: 'First string to concatenate'
     required: true
-    default: '0'
-  input-two:
-    description: 'Second number to add'
+    default: 'Hello'
+  input2:
+    description: 'Second string to concatenate'
     required: true
-    default: '0'
+    default: 'World'
 outputs:
-  sum:
-    description: 'Result of the addition'
+  concatenated-result:
+    description: 'The concatenated string result'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.input-one }}
-    - ${{ inputs.input-two }}
+    - ${{ inputs.input1 }}
+    - ${{ inputs.input2 }}
