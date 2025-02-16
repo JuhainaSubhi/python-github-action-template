@@ -11,13 +11,13 @@ import os
 
 if __name__ == "__main__" :
     # Rename these variables to something meaningful
-    input1 = float(sys.argv[1])
-    input2 = float(sys.argv[2])
+    input1 = sys.argv[1]
+    input2 = sys.argv[2]
     # Attempt to convert inputs to float
     num1 = safe_float_conversion(input1)
     num2 = safe_float_conversion(input2)
     # Perform the addition
-    result = input1 + input2
+    result = num1 + num2
 
 
     # Fake example outputs
