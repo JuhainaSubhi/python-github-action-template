@@ -9,16 +9,28 @@
 import sys
 import os
 
+
+
+def safe_float_conversion(value):
+    """Try to convert the input to a float, return None if invalid."""
+    try:
+        return float(value)
+    except ValueError:
+        print(f"Error: '{value}' is not a valid number.")
+        return None
+
 if __name__ == "__main__" :
-    # Rename these variables to something meaningful
+    # Get the inputs passed as command line arguments
     input1 = sys.argv[1]
     input2 = sys.argv[2]
+
     # Attempt to convert inputs to float
     num1 = safe_float_conversion(input1)
     num2 = safe_float_conversion(input2)
-    # Perform the addition
-    result = num1 + num2
 
+    # If either conversion fails, exit the script
+    if num1 is None or num2 is None:
+        sys.exit(1)  # Exit with error code 1 to indicate failure
 
     # Fake example outputs
     output1 = "Hello"
