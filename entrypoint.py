@@ -11,8 +11,11 @@ import os
 
 if __name__ == "__main__" :
     # Rename these variables to something meaningful
-    input1 = sys.argv[1]
-    input2 = sys.argv[2]
+    input1 = float(sys.argv[1])
+    input2 = float(sys.argv[2])
+
+    # Perform the addition
+    result = input1 + input2
 
 
     # Fake example outputs
@@ -23,8 +26,11 @@ if __name__ == "__main__" :
     # Make sure corresponds to output variable names in action.yml
     if "GITHUB_OUTPUT" in os.environ :
         with open(os.environ["GITHUB_OUTPUT"], "a") as f :
-            print("{0}={1}".format("output-one", output1), file=f)
-            print("{0}={1}".format("output-two", output2), file=f)
+            #print("{0}={1}".format("output-one", output1), file=f)
+            #print("{0}={1}".format("output-two", output2), file=f)
+	        print(f"sum={result}", file=f)
+
+    print(f"The sum of {input1} and {input2} is: {result}")
 
 # =======This is a change for testing the pipeline
 # =======This is a second change for testing the pipeline

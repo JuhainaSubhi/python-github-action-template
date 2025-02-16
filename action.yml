@@ -1,24 +1,22 @@
 # Make sure to change the action name here (must be unique).
 # Update the rest as needed.
-name: 'unique-action-goes-here'
-description: 'BRIEF DESCRIPTION OF YOUR ACTION'
+name: 'simple-addition-action'
+description: 'add two numbers and return results.'
 branding: # Look at documentation for branding options/requirements. These are my favorites.
-  icon: 'book-open'
+  icon: 'plus'
   color: 'green'
 inputs:
   input-one:
-    description: 'Description of input-one'
-    required: false
-    default: 'default value goes here'
+    description: 'First number to add'
+    required: true
+    default: '0'
   input-two:
-    description: 'Description of input-two'
-    required: false
-    default: 'default value goes here'
+    description: 'Second number to add'
+    required: true
+    default: '0'
 outputs:
-  output-one:
-    description: 'Description of output-one'
-  output-two:
-    description: 'Description of output-two'
+  sum:
+    description: 'Result of the addition'
 runs:
   using: 'docker'
   image: 'Dockerfile'
