@@ -15,3 +15,4 @@ if __name__ == "__main__":
             print(f"concatenated-result={result}", file=f)
 
     print(f"The concatenated result of '{input1}' and '{input2}' is: {result}")
+# Check if the pipeline pushes the docker image  to dockerhub
